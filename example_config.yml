@@ -1,3 +1,6 @@
+# Example configuration file for Spotify → Tidal Basic GUI
+# Rename this file to config.yml after editing
+
 spotify:
   client_id: your_client_id
   client_secret: your_client_secret
@@ -5,21 +8,24 @@ spotify:
   redirect_uri: http://127.0.0.1:8888/callback
   open_browser: True # Set to False if using a headless server environment
 
+# Uncomment this block if you want to only sync specific playlist IDs
+# sync_playlists:
+#   - spotify_id: 1ABCDEqsABCD6EaABCDa0a
+#     tidal_id: a0b1234-0a1b-012a-abcd-a1b234c5d6d7
 
-# uncomment this block if you want to only sync specific playlist IDs
-#sync_playlists:
-#  - spotify_id: 1ABCDEqsABCD6EaABCDa0a
-#    tidal_id: a0b1234-0a1b-012a-abcd-a1b234c5d6d7
+# Uncomment this block if you want to sync all playlists in the account with some exceptions
+# excluded_playlists:
+#   - spotify:playlist:1ABCDEqsABCD6EaABCDa0a
 
-# uncomment this block if you want to sync all playlists in the account with some exceptions
-#excluded_playlists:
-#  - spotify:playlist:1ABCDEqsABCD6EaABCDa0a
-
-# default setting for syncing favorites when no command line arguments are provided
-#   - when true:  favorites will be synced by default (overriden when any command line arg provided)
+# Default setting for syncing favorites when no command line arguments are provided
+#   - when true: favorites will be synced by default (overridden when any CLI argument is provided)
 #   - when false: favorites can only be synced manually via --sync-favorites argument
 sync_favorites_default: true
 
-# increasing these parameters should increase the search speed, while decreasing reduces likelihood of 429 errors
+# Increasing these parameters should increase search speed, while decreasing reduces likelihood of 429 errors
 max_concurrency: 10 # max concurrent connections at any given time
-rate_limit:      10 # max sustained connections per second
+rate_limit: 10      # max sustained connections per second
+
+tidal:
+  username: your_tidal_email
+  password: your_tidal_password
