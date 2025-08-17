@@ -35,10 +35,6 @@ python -m pip install -e .
 python -m pip install keyring
 ```
 
-> ⚠️ **Note:** Your fork already contains the original CLI files, so there’s no need to install the original repository separately.
-
----
-
 ## 🔧 Setup
 
 1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) and create a new app.
