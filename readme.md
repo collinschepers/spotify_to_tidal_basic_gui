@@ -1,62 +1,67 @@
-# Spotify → Tidal GUI
+🎵 Spotify → Tidal Basic GUI
 
-A modern, user-friendly **Graphical User Interface** built on top of the excellent [`spotify_to_tidal`](https://github.com/spotify2tidal/spotify_to_tidal) command line tool.
-This project makes it simple to sync your Spotify playlists into your Tidal account without needing to touch the command line.
+A simple desktop interface for transferring your Spotify playlists into Tidal.
+This project is built on top of the incredible spotify_to_tidal command-line tool, created by axel-de-block and contributors.
 
-⚠️ **Important:** I did **not** create the original `spotify_to_tidal` tool. Full credit and respect go to [axel-de-block](https://github.com/axel-de-block) and all contributors for building and maintaining it. My work is purely an **interface layer (GUI)** to make the tool more accessible to everyday users.
+⚠️ Disclaimer: I did not create the original sync engine. Full credit and respect goes to the original authors of spotify_to_tidal. This project simply adds a basic GUI wrapper to make the tool easier to use.
 
----
+✨ Features
 
-## ✨ Features
+🖥 Basic, straightforward GUI (no design frills, just functional)
 
-* 🎨 Clean and intuitive interface (Tkinter-based).
-* 🔑 Save your Spotify & Tidal credentials securely, so you don’t have to re-enter them every session.
-* 🎶 Import a single playlist by pasting its Spotify link.
-* 💿 Sync your entire Spotify library into Tidal with one click.
-* ❤️ Quick-sync of your **Liked Songs**.
-* ⚙️ Built on top of `spotify_to_tidal` – so all command line features are still available, just more accessible.
+🔑 Saved credentials (Spotify + Tidal login, Client ID/Secret)
 
----
+📂 Config file automatically generated/updated
 
-## 🚀 Installation
+🎶 Import all playlists or just specific ones
 
-Clone this repository and install requirements:
+❤️ Sync your "Liked Songs" with one click
 
-```bash
+🔄 Periodic sync support for large collections
+
+⚡ Built with the same optimizations as the original CLI tool
+
+🚀 Installation
+
+Clone this repository and install it in editable mode:
+
 git clone https://github.com/YOURUSERNAME/spotify-tidal-gui.git
 cd spotify-tidal-gui
-pip install -r requirements.txt
-```
+python3 -m pip install -e .
 
----
 
-## 🔧 Setup
+This will install both the original CLI tool and the GUI wrapper.
 
-1. Register a new Spotify app: [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
-2. Copy your **Client ID** and **Client Secret**.
-3. Launch the GUI and enter your Spotify + Tidal credentials in the settings panel (they’ll be saved for next time).
+🔧 Setup
 
----
+Rename the included example_config.yml to config.yml (or let the GUI generate one).
 
-## 🎵 Usage
+Go to the Spotify Developer Dashboard and create a new app.
 
-Run the GUI with:
+Copy your Client ID and Client Secret into the GUI or config file.
 
-```bash
+Enter your Spotify username and Tidal login details (these will be saved for you).
+
+Launch the GUI:
+
 python spotify_tidal_gui.py
-```
 
-* Paste a playlist link to sync just that playlist.
-* Use the "Sync All" button to bring your entire Spotify collection into Tidal.
-* Use "Sync Favorites" to import your liked songs.
+🖥 Usage Options
+✅ With the GUI
 
----
+Start the GUI with python spotify_tidal_gui.py.
 
-## 🙏 Acknowledgements
+Log in once → your details are saved.
 
-* Huge thanks to the [`spotify_to_tidal`](https://github.com/spotify2tidal/spotify_to_tidal) team for their incredible work.
-* This GUI would not exist without their project. Please consider contributing to the original repo if you’d like to support ongoing development of the core tool.
+Choose playlists or full sync.
 
----
+✅ With the original CLI (advanced users)
 
-Do you want me to also design a **screenshot/demo mockup section** for your README so it looks even more professional?
+You can still use the original spotify_to_tidal commands directly, for example:
+
+spotify_to_tidal
+spotify_to_tidal --uri 1ABCDEqsABCD6EaABCDa0a
+spotify_to_tidal --sync-favorites
+
+
+Run spotify_to_tidal --help for more options.
