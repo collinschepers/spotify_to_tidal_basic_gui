@@ -1,7 +1,7 @@
 # 🎵 Spotify → Tidal Basic GUI
 
 A simple desktop interface for transferring your Spotify playlists into Tidal.
-This project is built on top of the incredible [spotify\_to\_tidal](https://github.com/spotify2tidal/spotify_to_tidal) command-line tool, created by **axel-de-block** and contributors.
+This project is a **fork of the incredible [spotify\_to\_tidal](https://github.com/spotify2tidal/spotify_to_tidal) tool**, created by **axel-de-block** and contributors, with a **basic GUI wrapper** added.
 
 ⚠️ **Disclaimer:** I did not create the original sync engine. Full credit and respect goes to the original authors of `spotify_to_tidal`. This project simply adds a **basic GUI wrapper** to make the tool easier to use.
 
@@ -21,25 +21,7 @@ This project is built on top of the incredible [spotify\_to\_tidal](https://gith
 
 ## 🚀 Installation
 
-⚠️ **Step 1 — Install the original `spotify_to_tidal` tool (required):**
-
-```bash
-git clone https://github.com/spotify2tidal/spotify_to_tidal.git
-cd spotify_to_tidal
-python -m pip install -e .
-```
-
----
-
-⚠️ **Step 2 — Install the keyring dependency (required for saving credentials):**
-
-```bash
-python -m pip install keyring
-```
-
----
-
-**Step 3 — Install this GUI wrapper:**
+1. Clone this fork and install it in editable mode:
 
 ```bash
 git clone https://github.com/collinschepers/spotify-tidal-gui.git
@@ -47,7 +29,13 @@ cd spotify-tidal-gui
 python -m pip install -e .
 ```
 
-This will link both the original CLI tool and the GUI wrapper.
+2. Install the `keyring` dependency (required for saving credentials):
+
+```bash
+python -m pip install keyring
+```
+
+> ⚠️ **Note:** Your fork already contains the original CLI files, so there’s no need to install the original repository separately.
 
 ---
 
@@ -72,9 +60,9 @@ python spotify_tidal_gui.py
 * Log in once → your details are saved.
 * Choose playlists or full sync.
 
-### ✅ With the original CLI (advanced users)
+### ✅ With the CLI (advanced users)
 
-You can still use the original `spotify_to_tidal` commands directly, for example:
+You can still use the CLI commands included in this fork:
 
 ```bash
 spotify_to_tidal
