@@ -1,48 +1,81 @@
-A command line tool for importing your Spotify playlists into Tidal. Due to various performance optimisations, it is particularly suited for periodic synchronisation of very large collections.
+# 🎵 Spotify → Tidal Basic GUI
 
-Installation
------------
-Clone this git repository and then run:
+A simple desktop interface for transferring your Spotify playlists into Tidal.
+This project is a **fork of the incredible [spotify\_to\_tidal](https://github.com/spotify2tidal/spotify_to_tidal) tool**, created by **axel-de-block** and contributors, with a **basic GUI wrapper** added.
 
-```bash
-python3 -m pip install -e .
-```
-
-Setup
------
-0. Rename the file example_config.yml to config.yml
-0. Go [here](https://developer.spotify.com/documentation/general/guides/authorization/app-settings/) and register a new app on developer.spotify.com.
-0. Copy and paste your client ID and client secret to the Spotify part of the config file
-0. Copy and paste the value in 'redirect_uri' of the config file to Redirect URIs at developer.spotify.com and press ADD
-0. Enter your Spotify username to the config file
-
-Usage
-----
-To synchronize all of your Spotify playlists with your Tidal account run the following from the project root directory
-Windows ignores python module paths by default, but you can run them using `python3 -m spotify_to_tidal`
-
-```bash
-spotify_to_tidal
-```
-
-You can also just synchronize a specific playlist by doing the following:
-
-```bash
-spotify_to_tidal --uri 1ABCDEqsABCD6EaABCDa0a # accepts playlist id or full playlist uri
-```
-
-or sync just your 'Liked Songs' with:
-
-```bash
-spotify_to_tidal --sync-favorites
-```
-
-See example_config.yml for more configuration options, and `spotify_to_tidal --help` for more options.
+⚠️ **Disclaimer:** I did not create the original sync engine. Full credit and respect goes to the original authors of `spotify_to_tidal`. This fork simply adds a **basic GUI wrapper** to make the tool easier to use.
 
 ---
 
-#### Join our amazing community as a code contributor
-<br><br>
-<a href="https://github.com/spotify2tidal/spotify_to_tidal/graphs/contributors">
-  <img class="dark-light" src="https://contrib.rocks/image?repo=spotify2tidal/spotify_to_tidal&anon=0&columns=25&max=100&r=true" />
-</a>
+## ✨ Features
+
+* 🖥 Basic, straightforward GUI (functional, no frills)
+* 🔑 Save your Spotify & Tidal credentials via `keyring`
+* 📂 Config file automatically generated/updated
+* 🎶 Import all playlists or just specific ones
+* ❤️ Sync your "Liked Songs" with one click
+* 🔄 Periodic sync support for large collections
+* ⚡ Includes all CLI functionality from the original tool
+
+---
+
+## 🚀 Installation (Beginner-Friendly)
+
+Open your terminal or command prompt and run the following commands:
+
+```bash
+# 1. Clone this forked repository (includes CLI + GUI)
+git clone https://github.com/collinschepers/spotify-tidal-gui.git
+cd spotify-tidal-gui
+
+# 2. Install the tool in editable mode
+python -m pip install -e .
+
+# 3. Install the keyring dependency (required for saving credentials)
+python -m pip install keyring
+```
+
+> ⚠️ **Note:** This fork already contains the original CLI files, so there’s no need to install the original repository separately.
+
+---
+
+## 🔧 Setup
+
+1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) and create a new app.
+2. Copy your **Client ID** and **Client Secret** into the GUI or config file.
+3. Enter your **Spotify username** and **Tidal login details** (these will be saved for you).
+4. Launch the GUI:
+
+```bash
+python spotify_tidal_gui.py
+```
+
+---
+
+## 🖥 Usage Options
+
+### ✅ With the GUI
+
+* Start the GUI with `python spotify_tidal_gui.py`.
+* Log in once → your credentials are saved.
+* Choose playlists or full sync.
+
+### ✅ With the CLI (advanced users)
+
+You can still use the CLI commands included in this fork:
+
+```bash
+spotify_to_tidal
+spotify_to_tidal --uri 1ABCDEqsABCD6EaABCDa0a
+spotify_to_tidal --sync-favorites
+```
+
+Run `spotify_to_tidal --help` for more options.
+
+---
+
+## 🙏 Credits & Respect
+
+* Core sync logic: [spotify\_to\_tidal](https://github.com/spotify2tidal/spotify_to_tidal) by **axel-de-block** and contributors.
+
+Without the original tool, this GUI wouldn’t exist. Huge thanks to the authors for making playlist migration possible.
